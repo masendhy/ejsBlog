@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+
+            <h1 class="display-3">Home</h1>
+            <hr class="my-2">
+            <p class="lead">
+                <%= StartingContent%>
+            </p>
+            <% posts.forEach((post)=>{%>
+                <h1>
+                    <%= (post.title); %>
+                </h1>
+                <hr class="my-2">
+                <p>
+                    <%= (post.content.substring(0,100)+ ' ...'); %>
+                        <a href="/posts/<%=post.title%>">Read More</a>
+                </p>
+                <% }) %>
+
+        </div>
+    </div>
+
+    <%- include('partials/footer'); -%>
